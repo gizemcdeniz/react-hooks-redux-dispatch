@@ -9,5 +9,14 @@ function changeState(state, action) {
 
 let state = { count: 0 };
 let action = { type: "counter/increment" };
+function dispatch(action){
+  state=changeState(state,action)
+  return state
+}
 
-changeState(state, action);
+dispatch({ type: "counter/increment" });
+dispatch({ type: "counter/increment" });
+function render(){
+  document.body.textContent=state.count
+}
+render()
